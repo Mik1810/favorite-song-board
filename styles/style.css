@@ -1,0 +1,70 @@
+:root {
+    --primary: #29262b;
+    --selected: #3c3541;
+    --secondary: #5f85db;
+    --tertiary: #90b8f8;
+  }
+
+html {
+    background-color: var(--primary);
+    font-size: 20px;
+}
+
+body {
+    font-family: 'Labrada', sans-serif;
+}
+
+h1 {
+    font-family: 'Climate Crisis', sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+  
+p,
+li {
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+#main {
+    margin: 0 auto;
+    width: 900px;
+    height: 140px;
+    background-color: var(--secondary);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0px 0px 10px;
+}
+
+h1 {
+    margin: 0;
+    padding: 20px 0;
+    color: #00539f;
+    text-shadow: 3px 3px 1px black;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    border-width: 40px;
+    border: 2px solid var(--selected);
+}
+
+.song-column,
+.author-column,
+.textarea-column,
+.button-column {
+   
+}
+
+.textarea-column {
+    font-family: 'Climate Crisis', sans-serif;
+}
+
+.image-column {
+    
+}
