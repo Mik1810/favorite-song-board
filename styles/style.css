@@ -36,7 +36,7 @@ li {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 10px 0px 0px 10px;
+    align-items: center;
 }
 
 h1 {
@@ -54,17 +54,17 @@ img {
     border: 2px solid var(--selected);
 }
 
-.song-column,
+/*.song-column,
 .author-column,
 .textarea-column,
 .button-column {
-   
-}
-
-.textarea-column {
-    font-family: 'Climate Crisis', sans-serif;
+   align-items: center;
 }
 
 .image-column {
     
+}*/
+
+.textarea-column {
+    font-family: 'Climate Crisis', sans-serif;
 }
