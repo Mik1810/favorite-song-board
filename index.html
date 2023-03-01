@@ -19,32 +19,66 @@
 
 <body>
     <div id="bottom-title">
-        <h1>michael trova un nome serio</h1>
+        <h1 id="header">michael trova un nome serio</h1>
     </div>
    
 
-    <div id="main">
-        <div class="image-column">
-            <input type="file" onchange="onFileSelected(event)" id="input-file">
-            <img id="myimage" height="128" width="128" style="display: none">
-            <!--<img src="images/guastodamore.jpg" width="128">-->
+    <div id="table">
+        <div id="account">
+            <h3 id="nameAccount">Author: Michael</h3>
         </div>
-        <div class="song-column">
-            <p> <b>Title:</b> <br> Guasto d'Amore</p>
+        <div class="main">
+
+            <div class="image-column">
+                <input type="file" id="input-file">
+                <img id="myimage" height="128" width="128" style="display: none">
+            </div>
+
+            <div class="song-column">
+                <p><b>Title: </b></p>
+                <input type="text" name="" id="song-name" placeholder="Title...">
+            </div>
+
+            <div class="artist-column">
+                <p><b>Artist: </b></p>
+                <input type="text" name="" id="artist-name" placeholder="Artist...">
+            </div>
+
+            <div class="textarea-column">
+                <p><b>Description</b></p>
+                <textarea name="description" id="description-area" cols="20" rows="7" placeholder="Description..."></textarea>
+            </div>
+
+            <div class="button-column">
+                <button id="publish">Publish!</button>
+            </div>
         </div>
-        <div class="author-column">
-            <p> <b>Author: </b><br> Bresh</p>
+    </div>
+
+    <div id="bacheca">
+        <div class="main">
+            <div id="imagePublished">
+               
+            </div>
+
+            <div id="songPublished">
+                <p><b>Title: </b></p>
+
+            </div>
+
+            <div id="artistPublished">
+                <p><b>Artist: </b></p>
+                
+            </div>
+
+            <div id="descriptionPublished">
+                <p><b>Description</b></p>
+                
+            </div>
         </div>
-        <div class="textarea-column">
-            <textarea name="description" id="description-area" cols="20" rows="7"></textarea>
-        </div>
-        <div class="button-column">
-            <button id="test">Publish!</button>
-        </div>
-        
     </div>
     
-    <script src="scripts/main.js"></script>
+    <script type="module" src="scripts/main.js"></script>
 
 </body>
 </html>
