@@ -18,7 +18,7 @@ input.addEventListener('change', (event) => {
     var thumbnail = localStorage.getItem("input-file");
     myImage.setAttribute('src', thumbnail);
     myImage.style.display = "block";
-    input.parentNode.removeChild(input);
+    input.style.display = "none";
   });
   
   
@@ -50,15 +50,33 @@ const bacheca = document.querySelector("#bacheca");
 const inputTitle = document.querySelector("#song-name");
 const inputArtist = document.querySelector("#artist-name") 
 const inputDescription = document.querySelector("#description-area");
+
+const firstColumn = document.querySelector("#songPublished");
+const secondColumn = document.querySelector("#artistPublished");
+const thirdColumn = document.querySelector("#descriptionPublished");
 function publishContent() {
   
   let song = new Song(inputTitle.value, inputArtist.value, inputDescription.value, localStorage.getItem("input-file"));
-
+  console.log(song._title);
   const newImage = document.createElement("img");
+  const newTitle = document.createElement("p");
+  const newArtist = document.createElement("p");
+  const newDescription = document.createElement("p");
   newImage.setAttribute("height", 128);
   newImage.setAttribute("width", 128);
   newImage.style.margin = "10px"
   
   newImage.setAttribute('src', song._image);
   imagePublished.appendChild(newImage);
+  newTitle.innerHTML = song._title;
+  newArtist.innerHTML = song._artist;
+  newDescription.innerHTML = song._description;
+
+  firstColumn.appendChild(newTitle);
+  secondColumn.appendChild(newArtist);
+  thirdColumn.appendChild(newDescription);
+
+  input.style.display = "block";
+  myImage.style.display = "none";
+  input.value = "";
 }
