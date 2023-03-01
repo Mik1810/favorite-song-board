@@ -8,17 +8,20 @@ input.addEventListener('change', (event) => {
   const imageS = event.target.files[0];
 
   const reader = new FileReader();
+  console.log(imageS);
 
-  reader.readAsDataURL(imageS);
+  let x = reader.readAsDataURL(imageS);
+  console.log(reader.result);
 
-  input.addEventListener('onchange', () => {
+  reader.addEventListener('load', () => {
     localStorage.setItem('input-file', reader.result);
+    var thumbnail = localStorage.getItem("input-file");
+    myImage.setAttribute('src', thumbnail);
+    myImage.style.display = "block";
+    input.parentNode.removeChild(input);
   });
-
-  const thumbnail = localStorage.getItem("input-file");
-  myImage.setAttribute('src', thumbnail);
-  myImage.style.display = "block";
-  input.parentNode.removeChild(input);
+  
+  
 });
 
 
@@ -49,7 +52,7 @@ const inputArtist = document.querySelector("#artist-name")
 const inputDescription = document.querySelector("#description-area");
 function publishContent() {
   
-  let song = new Song(inputTitle.value, inputArtist.value, inpuDescription.value, localStorage.getItem("input-file"));
+  let song = new Song(inputTitle.value, inputArtist.value, inputDescription.value, localStorage.getItem("input-file"));
 
   const newImage = document.createElement("img");
   newImage.setAttribute("height", 128);
