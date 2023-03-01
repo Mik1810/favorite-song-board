@@ -11,7 +11,7 @@ input.addEventListener('change', (event) => {
 
   reader.readAsDataURL(imageS);
 
-  reader.addEventListener('load', () => {
+  input.addEventListener('onchange', () => {
     localStorage.setItem('input-file', reader.result);
   });
 
@@ -46,7 +46,7 @@ publishButton.addEventListener("click", publishContent);
 const bacheca = document.querySelector("#bacheca");
 const inputTitle = document.querySelector("#song-name");
 const inputArtist = document.querySelector("#artist-name") 
-const inpuDescription = document.querySelector("#description-area");
+const inputDescription = document.querySelector("#description-area");
 function publishContent() {
   
   let song = new Song(inputTitle.value, inputArtist.value, inpuDescription.value, localStorage.getItem("input-file"));
