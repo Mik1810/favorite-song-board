@@ -82,3 +82,30 @@ h3 {
     padding: 10px 0px 0px 0px; 
     margin: 5px;
 }
+
+.row-bacheca {
+    position: top;
+    font-size: 30px;
+}
+
+#column-header {
+    display: flex;
+    flex-direction: inherit;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#column-header p {
+    font-size: 30px;
+}
+
+#bacheca {
+    display: grid;
+    flex-direction: inherit;
+    align-items: center;
+    
+}
+
+#bacheca p {
+    font-size: 30px;
+}
