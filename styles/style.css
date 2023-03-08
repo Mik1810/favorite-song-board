@@ -20,16 +20,10 @@ h1 {
     text-align: center;
 }
   
-p,
-li {
-    font-size: 16px;
-    line-height: 2;
-    letter-spacing: 1px;
-}
 
 #table {
     margin: 0 auto;
-    width: 1000px;
+    width: 1500px;
     height: 200px;
     background-color: var(--secondary);
     border-radius: 25px;
@@ -43,7 +37,7 @@ li {
 #bacheca {
     
     margin: 10px auto;
-    width: 1000px;
+    width: 1500px;
     background-color: var(--secondary);
     border-radius: 25px;
 }
@@ -56,6 +50,10 @@ li {
     align-items: center;
 }
 
+.textarea-column h3 {
+    margin: 10px;
+}
+
 h1 {
     margin: 0;
     padding: 20px 0;
@@ -64,17 +62,13 @@ h1 {
 }
 
 img {
-    display: block;
+    display: flexbox;
     margin: 0 auto;
     border-radius: 10px;
     border-width: 40px;
     border: 2px solid var(--selected);
 }
 
-p {
-    line-height: 0px;
-    height: 0px;
-}
 
 h3 {
     line-height: 10px;
@@ -99,13 +93,25 @@ h3 {
     font-size: 30px;
 }
 
-#bacheca {
-    display: grid;
-    flex-direction: inherit;
+#bacheca th, td {
+    font-size: 30px;
+    flex-direction: row;
     align-items: center;
-    
+    text-align: center;
+    align-content: center;
 }
 
-#bacheca p {
-    font-size: 30px;
+.imgSong {
+    height: 128px;
+    width: 128px;
+    margin: 10px;
 }
+
+.td p {
+    font-size: 20px;
+}
+
+.text-wrap {
+    overflow-wrap: break-word;
+}
+

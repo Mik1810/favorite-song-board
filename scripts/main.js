@@ -53,31 +53,49 @@ const inputArtist = document.querySelector("#artist-name")
 const inputDescription = document.querySelector("#description-area");
 
 function loadPost(song) {
-  const mainDiv = document.querySelector("#bacheca");
-  const newDiv = document.createElement("div");
-  const newImage = document.createElement("img");
+  const table = document.querySelector("#bacheca");
+
+  //Creating the row
+  const newTableRow = document.createElement("tr");
+
+  //Adding the new row to the table
+  table.appendChild(newTableRow);
+  
+  //Creating the cells of the row
+  const newImageBox = document.createElement("td");
+  const newTitleBox = document.createElement("td");
+  const newArtistBox = document.createElement("td");
+  const newDescriptionBox = document.createElement("td");
+
+  //Adding the table cells to the row
+  newTableRow.append(newImageBox, newTitleBox, newArtistBox, newDescriptionBox);
+
+  //Creating the elements for the cells
   const newTitle = document.createElement("p");
   const newArtist = document.createElement("p");
   const newDescription = document.createElement("p");
-  newImage.setAttribute("height", 128);
-  newImage.setAttribute("width", 128);
-  newImage.style.margin = "10px"
+  const newImg = document.createElement("img");
+
+  //Adding data to the table cells
+  newImageBox.appendChild(newImg);
+  newTitleBox.appendChild(newTitle);
+  newArtistBox.appendChild(newArtist);
+  newDescriptionBox.appendChild(newDescription);
+
+  //Styiling the image of the row
+  newImg.classList.add("imgSong");
   
-  newImage.setAttribute('src', song.image);
-  newDiv.appendChild(newImage);
-  newTitle.innerHTML = song.title;
-  newArtist.innerHTML = song.artist;
-  newDescription.innerHTML = song.description;
+  //Setting the datas
+  newImg.setAttribute('src', song.image);
+  newArtist.classList.add("text-wrap");
+  newTitle.classList.add("text-wrap");
+  newDescription.classList.add("text-wrap");
+  
+  newTitle.innerText = song.title;
+  newArtist.innerText = song.artist;
+  newDescription.innerText = song.description;
 
-  newDiv.appendChild(newTitle);
-  newDiv.appendChild(newArtist);
-  newDiv.appendChild(newDescription);
-  newDiv.style.display = "flex";
-  newDiv.style.flexDirection = "row";
-  newDiv.style.justifyContent = "space-around";
-  newDiv.style.alignItems = "center";
-  mainDiv.appendChild(newDiv);
-
+  //Resetting the input field
   input.style.display = "block";
   myImage.style.display = "none";
   input.value = "";
@@ -89,7 +107,7 @@ function publishContent() {
   localStorage.setItem("song"+counterDB, JSON.stringify(song));
   console.log(JSON.parse(localStorage.getItem("song"+counterDB)));
   counterDB++;
-  localStorage.setItem("counterDB",counterDB);  console.log(song._title);
+  localStorage.setItem("counterDB",counterDB);
   loadPost(song);
 }
 
@@ -106,3 +124,5 @@ function fetchPost() {
     loadPost(JSON.parse(localStorage.getItem("song"+i)));
   }
 }
+
+
